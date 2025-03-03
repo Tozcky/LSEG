@@ -1,0 +1,29 @@
+🔹 Overview of Your System
+Your scripts handle configuration management, encryption, logging, and email notifications in a structured way.
+
+### 1. update_blueprint.py
+
+Validates a Change ID (must start with "CHG" followed by numbers).
+Reads configurations from config.ini (paths, email details, security key).
+Encrypts the application.config file and saves it as an encrypted blueprint.
+Sends an acknowledgment email with details (timestamp, file paths, server info).
+Uses logging_setup.py for structured logging.
+### 2. encrypt_decrypt.py
+
+Provides encryption and decryption functions using Fernet (symmetric encryption).
+Uses a 32-byte encryption key from config.ini.
+Encrypts and decrypts a test string to demonstrate functionality.
+Uses logging_setup.py for structured logging.
+### 3. config.ini (Configuration File)
+Defines system settings:
+
+Paths: Where to find the app root, config file, blueprint storage, email script.
+Exclusions: Specifies excluded directories (logs, backup).
+Security: Stores the encryption key.
+Email: Defines sender (FROM) and recipient (TO) for notifications.
+### 4. logging_setup.py
+
+Centralized logging setup for all scripts.
+Ensures logs are stored in a "logs" directory.
+Logs messages to both file and console.
+Supports different log levels (INFO, DEBUG, etc.).
